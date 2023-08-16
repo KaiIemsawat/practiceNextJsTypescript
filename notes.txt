@@ -1,0 +1,25 @@
+In next.js, we may create a folder like this -> 'src/app/thisFolder/page.tsx'.
+Then, and we may navigate to localhost:3000/thisFolder to see the page.
+- Note that the name page.tsx is neccessary (much like index.tsx)
+
+In 'src/app/layout.tsx' we can create layout that will apply to all pages
+
+We may make a custom not found page under 'src/app/' the file name must be not-found.tsx
+
+To custom loading page, we need to create a file call loading.tsx (put in 'src/app/' to make it global)
+
+"use client";
+// ! "use client"; is used to declare that this is a client component.
+// ! need to be on the top most
+
+We can also create an error page that may display when error occur.
+To make it global, the error page will be put as ('src/app/error.tsx')
+Or else, put in the same folder with the specific page that need to run with that specific error when error occur
+
+In this example, we create a folder caled 'components' with a file call 'bootstrap.tsx'.
+Then we destructure and export different components and use them in other files/pages
+As seen in 'layout.tsx', we import {Container} from the components directory
+- Note!! we declare "use client" in bootstrap.tsx, so this {Containner} component is count as client.
+Then 'hello page' (hello folder) will be counted as 'client since it is in <Container></Container>
+
+Check loading.tsx for the setup of loading animation
